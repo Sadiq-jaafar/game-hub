@@ -6,7 +6,7 @@ import GameCardContainer from "./GameCardContainer";
 
 const GameGrid = () => {
   // Fetch games using the useGames hook
-  const { games, error, isLoading } = useGames();
+  const { data, error, isLoading } = useGames();
 
   // An array to generate multiple skeletons for loading state
   const skeletons = [1, 2, 3, 4, 5, 6, 8, 9];
@@ -31,7 +31,7 @@ const GameGrid = () => {
           ))}
 
         {/* Display game cards when not loading */}
-        {games.map((game) => (
+        {data.map((game) => (
           <GameCardContainer key={game.id}>
             <GameCard game={game} />
           </GameCardContainer>
