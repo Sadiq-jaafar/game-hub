@@ -3,10 +3,14 @@ import useGames from "../Hooks/useGames";
 import GameCard from "./GameCard";
 import GameCardSkeleton from "./GameCardSkeleton";
 import GameCardContainer from "./GameCardContainer";
+import { Genre } from "../Hooks/UseGenre";
 
-const GameGrid = () => {
+interface Props {
+  selectedGenre: Genre | null;
+}
+const GameGrid = ({ selectedGenre }: Props) => {
   // Fetch games using the useGames hook
-  const { data, error, isLoading } = useGames();
+  const { data, error, isLoading } = useGames(selectedGenre);
 
   // An array to generate multiple skeletons for loading state
   const skeletons = [1, 2, 3, 4, 5, 6, 8, 9];
