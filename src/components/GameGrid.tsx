@@ -24,8 +24,8 @@ const GameGrid = ({ gameQuery }: Props) => {
       {/* Use SimpleGrid to create a responsive grid layout */}
       <SimpleGrid
         columns={{ sm: 1, md: 2, lg: 3, xl: 4 }}
-        spacing={10}
-        padding={3}
+        spacing={6}
+        padding="10px"
       >
         {/* Display skeletons when loading */}
         {isLoading &&
